@@ -11,3 +11,33 @@ npx prisma migrate dev --name init (add new table)
 https://www.prisma.io/blog/nestjs-prisma-rest-api-7D056s1BmOL0#assumed-knowledge
 
 npx prisma db seed
+
+Aims:
+Have a db that I maintain, extend and practice with. This DB can be used across tutorials
+
+Tables
+User - the user
+Instrument - the instruments
+
+User - Instrument, many to one
+One user may have many instruments
+A instrument may only have one user
+
+InstrumentArchive:
+
+- A reference of international instruments with description, nomenclature, audio, images, video.
+
+CRUD
+
+- USER: Add new user, Auth, Permissions,
+- - Create
+- - Get Details
+- - Update details, permissions
+- - Delete
+
+- Instrument
+- - CRUD
+
+.. Ideas to extend
+
+Instrument Dictionary
