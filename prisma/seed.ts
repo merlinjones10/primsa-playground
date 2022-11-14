@@ -31,6 +31,23 @@ async function main() {
     },
   });
 
+  const user1 = await prisma.user.upsert({
+    where: { email: 'user1@test.com' },
+    update: {},
+    create: {
+      name: 'user1',
+      email: 'user1@test.com',
+    },
+  });
+
+  const user2 = await prisma.user.upsert({
+    where: { email: 'user2@test.com' },
+    update: {},
+    create: {
+      name: 'user1',
+      email: 'user2@test.com',
+    },
+  });
   console.log({ post1, post2 });
 }
 
