@@ -6,4 +6,7 @@ export class CreateUserDto {
 
   @ApiProperty()
   name: string;
+
+  @ApiProperty({ required: true })
+  password: string;
 }
