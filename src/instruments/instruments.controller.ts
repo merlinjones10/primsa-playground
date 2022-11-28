@@ -25,10 +25,10 @@ export class InstrumentsController {
     return this.instrumentsService.findAll();
   }
 
-  @Get('user/:uid')
-  findAllUsers(@Param('uid') uid: string) {
-    return this.instrumentsService.findAllUsers(+uid);
-  }
+  // @Get('user/:uid')
+  // findAllUsers(@Param('uid') uid: string) {
+  //   return this.instrumentsService.findAllUsers(+uid);
+  // }
 
   @Get(':id')
   findOne(@Param('id') id: string) {

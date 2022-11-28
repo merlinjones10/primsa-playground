@@ -19,9 +19,9 @@ export class InstrumentsService {
     return this.prisma.instrument.findUnique({ where: { id } });
   }
 
-  findAllUsers(id: number) {
-    return this.prisma.instrument.findMany({ where: { ownerId: id } });
-  }
+  // findAllUsers(id: number) {
+  //   return this.prisma.instrument.findMany({ where: { ownerId: id } });
+  // }
 
   update(id: number, updateInstrumentDto: UpdateInstrumentDto) {
     return this.prisma.article.update({
