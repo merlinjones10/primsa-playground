@@ -1,26 +1,36 @@
 import { Injectable } from '@nestjs/common';
 import { CreateInstrumentDto } from './dto/create-instrument.dto';
 import { UpdateInstrumentDto } from './dto/update-instrument.dto';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class InstrumentsService {
+  constructor(private prisma: PrismaService) {}
+
   create(createInstrumentDto: CreateInstrumentDto) {
-    return 'This action adds a new instrument';
+    return this.prisma.instrument.create({ data: createInstrumentDto });
   }
 
   findAll() {
-    return `This action returns all instruments`;
+    return this.prisma.instrument.findMany();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} instrument`;
+    return this.prisma.instrument.findUnique({ where: { id } });
+  }
+
+  findAllUsers(id: number) {
+    return this.prisma.instrument.findMany({ where: { ownerId: id } });
   }
 
   update(id: number, updateInstrumentDto: UpdateInstrumentDto) {
-    return `This action updates a #${id} instrument`;
+    return this.prisma.article.update({
+      where: { id },
+      data: updateInstrumentDto,
+    });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} instrument`;
+    return this.prisma.instrument.delete({ where: { id } });
   }
 }
