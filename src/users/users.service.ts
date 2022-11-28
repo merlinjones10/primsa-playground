@@ -21,7 +21,8 @@ export class UsersService {
       include: { instruments: true },
     });
   }
-  login(email: string) {
+
+  loginCreds(email: string) {
     return this.prisma.user.findUnique({
       where: { email: email },
     });
